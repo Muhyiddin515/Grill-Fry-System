@@ -1,7 +1,6 @@
 # Grill-Fry-System
-# Restaurant Management System
 
-This is a full-stack restaurant management web application developed using html ,css ,PHP and Java-Script.
+This is a full-stack restaurant management web application developed using html ,css ,PHP ,SQL and Java-Script.
 
 ## Features
 - Reservation Management
