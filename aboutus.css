@@ -1,0 +1,93 @@
+*,::after , ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+
+}
+
+body{
+    margin: 0 100px;
+    background-color: wheat;
+}
+.nav{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px 0;
+}
+
+.nav .logo h1{
+    font-weight: 600;
+    font-family: sans-serif;
+    color: black;
+}
+
+.nav .logo b{
+    color: #ff511c;
+
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+.nav ul li{
+    margin-right:30px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size:17px ;
+}
+
+.nav ul .active::after{
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #ff511c;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+input{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight:600 ;
+}
+
+.signin {
+    padding: 10px 20px;
+    background: transparent;
+    color: black;
+    font-weight: 600;
+    border: 2px solid #ff511c; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.signup {
+    background-color: #ff511c;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-left: 2px;
+}
+.about-image img{ height: 550px;margin-left: 120px; margin-top: 30px;}
+  .about{ display: inline-flex;}
+  .about b{ color: #ff511c;}
+   .about p{ margin-left: 50px;font-size:large; 
+font-family:Papyrus; margin-top: 150px; }
+.about p b{ font-size: x-large; }
+.about button{ margin-left: 150px; margin-top: 20px; height: 30px; 
+width: 130px; background-color: #ff511c;
+ font-family: 'Times New Roman', Times, serif;}
+ .about button:hover{ background-color: black; color: white;}

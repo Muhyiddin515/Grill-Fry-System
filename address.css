@@ -1,0 +1,117 @@
+/* ===== Address Pages Style ===== */
+
+body{
+    margin: 0 100px;
+    background-color: wheat;
+}
+
+/* NAV */
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.nav .logo h1{
+    font-weight: 600;
+    font-family: sans-serif;
+    color: black;
+}
+
+.nav .logo b{
+    color: #ff511c;
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li{
+    margin-right:30px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size:17px;
+}
+
+.nav ul .active::after{
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #ff511c;
+    display: block;
+    margin-left: 10px;
+}
+
+/* PAGE */
+.page-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.page-title {
+    text-align: center;
+    color: #ff511c;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background: #fff;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: #ff511c;
+}
+
+/* BUTTON */
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff511c;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e64514;
+}
+
+/* LINKS */
+.address-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.address-link a {
+    color: #ff511c;
+    text-decoration: none;
+    font-weight: bold;
+}
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voice Order - GRILL & FRY</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    .voice-container {
+      text-align: center;
+      margin: 80px auto;
+      width: 80%;
+      max-width: 600px;
+      background: #fff7f2;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .voice-container h2 {
+      color: #c94b2b;
+    }
+
+    .mic-button {
+      background: #c94b2b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 90px;
+      height: 90px;
+      font-size: 36px;
+      cursor: pointer;
+      margin: 20px auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .mic-button:hover {
+      background: #a93f24;
+    }
+
+    .listening {
+      background: #ff5e00;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,94,0,0.6); }
+      70% { box-shadow: 0 0 0 20px rgba(255,94,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,94,0,0); }
+    }
+
+    #recognized-text {
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 20px;
+      min-height: 60px;
+      font-size: 18px;
+      color: #333;
+      border: 1px solid #ccc;
+    }
+
+    #confirmBtn {
+      background: #c94b2b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      margin-top: 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #confirmBtn:hover {
+      background: #a93f24;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ Same Navbar as Home Page -->
+<div class="nav">
+  <div class="logo"><h1>GRILL<b>&</b><b>FRY</b></h1></div>
+  <ul>
+      <li><a href="afterlogin.php">Home</a></li>
+      <li><a href="menu.php">Menu</a></li>
+      <li><a class="active" href="voiceorder.html">Voice Order</a></li>
+      <li><a href="services.php">Service</a></li>
+      <li><a href="aboutus.php">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="mybooking.php">My Booking</a></li>
+      <li><a href="cart.php" style="background:#ff4d4d;color:white;padding:10px 15px;border-radius:6px;">🛒 Cart</a></li>
+
+      <li><a href="logout.php">Logout</a></li>
+  </ul>
+  <div></div>
+</div>
+
+<!-- ===== Voice Order Section ===== -->
+<section class="voice-container">
+  <h2>Place Your Order by Voice</h2>
+  <p>Tap the microphone and tell us what you’d like to order!</p>
+  
+  <button id="micBtn" class="mic-button">🎙️</button>
+  
+  <div id="recognized-text">Your speech will appear here...</div>
+
+  <button id="confirmBtn">Confirm Order</button>
+</section>
+
+<script>
+const micBtn = document.getElementById('micBtn');
+const output = document.getElementById('recognized-text');
+const confirmBtn = document.getElementById('confirmBtn');
+
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.lang = 'en-US';
+recognition.continuous = false;
+recognition.interimResults = false;
+
+let lastResult = "";
+
+micBtn.addEventListener('click', () => {
+  recognition.start();
+  micBtn.classList.add('listening');
+  output.textContent = "Listening...";
+});
+
+recognition.onresult = (event) => {
+  const transcript = event.results[0][0].transcript;
+  lastResult = transcript;
+  output.textContent = "You said: " + transcript;
+  micBtn.classList.remove('listening');
+};
+
+recognition.onerror = (e) => {
+  output.textContent = "Error: " + e.error;
+  micBtn.classList.remove('listening');
+};
+
+confirmBtn.addEventListener('click', () => {
+  if (!lastResult) {
+    alert("Please record your order first.");
+    return;
+  }
+
+  fetch('processVoiceOrder.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: 'voiceText=' + encodeURIComponent(lastResult)
+  })
+  .then(res => res.text())
+  .then(data => alert(data))
+  .catch(err => alert("Error sending to server."));
+});
+</script>
+
+</body>
+</html>

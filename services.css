@@ -1,0 +1,228 @@
+*,::after , ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+
+}
+
+body{
+    margin: 0 100px;
+    background-color:wheat;
+}
+.nav{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 30px 0;
+}
+
+.nav .logo h1{
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #000000;
+}
+
+.nav .logo b{
+    color: #ff511c;
+
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+.nav ul li{
+    margin-right:30px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:#000000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size:17px ;
+}
+
+.nav ul .active::after{
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #ff511c;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+
+input{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight:600 ;
+}
+
+.signin {
+    padding: 10px 20px;
+    background: transparent;
+    color: #000000;
+    font-weight: 600;
+    border: 2px solid #ff511c; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.signup {
+    background-color: #ff511c;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-left: 2px;
+
+}.services {
+    background-color: #ffeae0;
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.service-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: 23%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.soon-banner {
+    position: absolute;
+   
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffcc00;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+/* ===== SERVICE REQUEST SECTION ===== */
+.service-request{
+    max-width: 900px;
+    margin: 60px auto;
+    background: linear-gradient(135deg, #ffffff, #fff4ec);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+.service-request h2{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 35px;
+    color: #2c2c2c;
+    letter-spacing: 1px;
+}
+
+/* ===== GRID FORM ===== */
+.service-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.service-form label{
+    grid-column: span 2;
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+/* INPUTS */
+.service-form input,
+.service-form select,
+.service-form textarea{
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1.5px solid #ddd;
+    font-size: 15px;
+    background: white;
+    transition: all .25s ease;
+}
+
+.service-form textarea{
+    min-height: 90px;
+    resize: none;
+    grid-column: span 2;
+}
+
+/* FOCUS EFFECT */
+.service-form input:focus,
+.service-form select:focus,
+.service-form textarea:focus{
+    outline: none;
+    border-color: #ff511c;
+    box-shadow: 0 0 0 4px rgba(255,81,28,.18);
+}
+
+/* BUTTON */
+.service-form button{
+    grid-column: span 2;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff511c, #ff7a18);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.service-form button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255,81,28,.45);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px){
+    .service-form{
+        grid-template-columns: 1fr;
+    }
+    .service-form textarea,
+    .service-form button{
+        grid-column: span 1;
+    }
+}

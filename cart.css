@@ -1,0 +1,67 @@
+
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 100px;
+    background-color: wheat;
+    font-family: Arial, sans-serif;
+}
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+.nav .logo h1{
+    font-weight: 600;
+    font-family: sans-serif;
+    color: black;
+}
+.nav .logo b{
+    color: #ff511c;
+}
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+.nav ul li{
+    margin-right:30px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size:17px ;
+}
+.nav ul .active::after{
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: #ff511c;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+}
+
+.container{
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+h1{ text-align:center; color:#ff511c; margin-bottom: 20px;}
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; text-align: center; border: 1px solid #ddd; }
+th { background-color: #ff511c; color: #fff; }
+button{ padding: 6px 12px; border: none; border-radius: 5px; cursor: pointer; font-weight:600; }
+button.update { background-color: #ff511c; color: white; }
+button.remove { background-color: red; color: white; }
+.total { text-align: right; margin-top: 10px; font-size: 18px; font-weight: 600;}
+.checkout-btn { margin-top: 20px; padding: 10px 20px; font-size:16px; background:#ff511c; color:white; border:none; border-radius:6px; cursor:pointer; }
+.checkout-btn:hover { background:#e64a19; }

@@ -1,0 +1,107 @@
+/* ===== GLOBAL ===== */
+body {
+    background-color: wheat;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== CONTAINER ===== */
+.page-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== TITLES ===== */
+.page-title {
+    text-align: center;
+    color: #ff4d4d;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+/* ===== TABLE ===== */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #ff4d4d;
+    color: white;
+    padding: 14px;
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.table tr:hover {
+    background: #fff2ed;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    background: #ff4d4d;
+    transition: 0.3s;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e63b3b;
+}
+
+.btn-dark {
+    background: #333;
+}
+
+.btn-dark:hover {
+    background: #000;
+}
+
+/* ===== ORDER SUCCESS ===== */
+.success-box {
+    text-align: center;
+}
+
+.success-box h1 {
+    color: #28a745;
+    font-size: 36px;
+}
+
+.order-id {
+    background: #fff7f2;
+    border: 2px dashed #ff4d4d;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 25px 0;
+}
+
+/* ===== STATUS ===== */
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+.status.pending {
+    background: orange;
+}
+
+.status.confirmed {
+    background: green;
+}
